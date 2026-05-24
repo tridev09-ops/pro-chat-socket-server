@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
-import connectDb from "./db/db.ts";
-import Conversation from "./db/models/conversationModel.ts";
-import Message from "./db/models/messageModel.ts";
+import connectDb from "./db/db";
+import Conversation from "./db/models/conversationModel";
+import Message from "./db/models/messageModel";
 
 const sendMessage = async (messageObj: {
     conversationId: string;
