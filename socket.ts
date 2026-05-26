@@ -36,9 +36,13 @@ const sendMessage = async (messageObj: {
 };
 
 const initSocket = (server: any) => {
+    const allowedOrigins = process.env.CORS_ORIGIN
+        ? process.env.CORS_ORIGIN.split(",")
+        : ["*"];
+
     const io = new Server(server, {
         cors: {
-            origin:  ["*"],
+            origin: allowedOrigins,
             methods: ["GET", "POST"]
         }
     });
